@@ -1,22 +1,21 @@
 <!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>MARTER_ELECTRONICS</title>
 
 <style>
-.tui-btn {
-  background: #008080;
-  color: white;
-  padding: 0px 0px;
-  text-decoration: none;
-  line-height: 1.1;
+html {
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 
-.tui-btn:hover {
-  background: #ffffff;
-  color: black;
-}
-
-html { -webkit-text-size-adjust: 100%; }
-body, pre, a {
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgb(37, 37, 37);
   font-family:
     "DejaVu Sans Mono",
     "Liberation Mono",
@@ -24,106 +23,137 @@ body, pre, a {
     "Menlo",
     "Consolas",
     monospace;
+  font-size: clamp(14px, 2.5vw, 18px);
 }
-body { font-size: 150%; }
-pre { line-height: 1; margin: 0; }
-pre a { font-family: inherit; line-height: inherit; text-decoration: none; }
+
+pre {
+  line-height: 1;
+  margin: 0;
+}
+
+pre a {
+  font-family: inherit;
+  line-height: inherit;
+  text-decoration: none;
+}
+
+.tui-btn {
+  background: #008080;
+  color: white;
+  padding: 0;
+  text-decoration: none;
+}
+
+.tui-btn:hover {
+  background: white;
+  color: black;
+}
+
+main {
+  flex: 1;
+}
+
+.topbar {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 0.1ch 0;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1ch;
+  background: #000;
+  padding-bottom: 0.5ch;
+}
+
+.windows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.tui-window {
+  display:inline-block;
+  background:#000080;
+  color:white;
+  padding:10px;
+  border:4px solid white;
+  box-shadow:10px 10px black;
+  font-family: monospace;
+}
+
+.tui-title {
+  border-bottom:1px solid white;
+  margin-bottom:6px;
+  padding-bottom:2px;
+  text-align:center;
+}
+
+.tui-body {
+  min-width:200px;
+}
 
 </style>
-
-<head>
-<meta charset="utf-8">
-<title>MARTER_ELECTRONICS</title>
-
-
-<pre style="
-  line-height:1;
-  background:#000000;
-  color:#ffffff;
-  padding:0.1ch 0ch;
-  text-align: center;
-">
-======== MARTER_ELECTRONICS ========
-<div style="
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-">     
-<a href="page2.html" class="tui-btn">[ Projects ]</a> <a href="page2.html" class="tui-btn">[ Projects ]</a> <a href="page2.html" class="tui-btn">[ Projects ]</a>
-</div>
-</pre>
-
 </head>
 
-<body style="background: rgb(37, 37, 37);">
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<pre>======== MARTER_ELECTRONICS ========</pre>
+<div class="menu">
+  <a href="page2.html" class="tui-btn">[ Projects ]</a>
+  <a href="page2.html" class="tui-btn">[ About ]</a>
+  <a href="page2.html" class="tui-btn">[ Contact ]</a>
+</div>
+<pre>PROJECTS</pre>
+</div>
 
 <main>
 
-<div style="
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-  margin-top: 10px;
-">
+<!-- WINDOWS -->
+<div class="windows">
 
-<pre style="background:#000080;color:white;line-height:1;box-shadow:1ch 1ch black;">
-╔═══════Window1════════╗
-║ FOXES!!!             ║
-║ <a href="page2.html" class="tui-btn">[ Yes ]</a>       <a href="page2.html" class="tui-btn">[ No ]</a> ║
-╚══════════════════════╝
-</pre>
+  <div class="tui-window">
+    <div class="tui-title">Window1</div>
+    <div class="tui-body">
+      FOXES!!!<br><br>
+      <a href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a href="page2.html" class="tui-btn">[ No ]</a>
+    </div>
+  </div>
 
-<pre style="background:#000080;color:white;line-height:1;box-shadow:1ch 1ch black;">
-╔═══════Window2════════╗
-║ WOLVES!!!            ║
-║ <a href="page2.html" class="tui-btn">[ Yes ]</a>       <a href="page2.html" class="tui-btn">[ No ]</a> ║
-╚══════════════════════╝
-</pre>
+  <div class="tui-window">
+    <div class="tui-title">Window2</div>
+    <div class="tui-body">
+      WOLVES!!!<br><br>
+      <a href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a href="page2.html" class="tui-btn">[ No ]</a>
+    </div>
+  </div>
 
-<pre style="background:#000080;color:white;line-height:1;box-shadow:1ch 1ch black;">
-╔═══════Window3════════╗
-║ MARTENS!!!           ║
-║ <a href="page2.html" class="tui-btn">[ Yes ]</a>       <a href="page2.html" class="tui-btn">[ No ]</a> ║
-╚══════════════════════╝
-</pre>
-
-<pre style="background:#000080;color:white;line-height:1;box-shadow:1ch 1ch black;">
-╔═══════Window4════════╗
-║ DRAGONS!!!           ║
-║ <a href="page2.html" class="tui-btn">[ Yes ]</a>       <a href="page2.html" class="tui-btn">[ No ]</a> ║
-╚══════════════════════╝
-</pre>
+  <div class="tui-window">
+    <div class="tui-title">Window3</div>
+    <div class="tui-body">
+      DRAGONS!!!<br><br>
+      <a href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a href="page2.html" class="tui-btn">[ No ]</a>
+    </div>
+  </div>
 
 </div>
 
 </main>
 
 <footer>
-
-<style>
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;   /* this pushes the footer down */
-}
-</style>
-
-<pre style="background:#141428;color:white;line-height:1; text-align: center;">
-Powered by just plain text HTML and CSS
+<pre style="background:#141428;color:white;text-align:center;">
+Powered by just HTML and CSS
 </pre>
 </footer>
 
 </body>
-
-
-
 </html>
