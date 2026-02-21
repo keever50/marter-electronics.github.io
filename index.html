@@ -3,7 +3,6 @@
 
 <style>
 .tui-btn {
-  font-family: monospace;
   background: #008080;
   color: white;
   padding: 0px 0px;
@@ -18,7 +17,13 @@
 
 html { -webkit-text-size-adjust: 100%; }
 body, pre, a {
-  font-family: monospace;
+  font-family:
+    "DejaVu Sans Mono",
+    "Liberation Mono",
+    "Courier New",
+    "Menlo",
+    "Consolas",
+    monospace;
 }
 body { font-size: 150%; }
 pre { line-height: 1; margin: 0; }
@@ -48,11 +53,11 @@ pre a { font-family: inherit; line-height: inherit; text-decoration: none; }
 </div>
 </pre>
 
-
-
 </head>
 
-<body>
+<body style="background: rgb(37, 37, 37);">
+
+<main>
 
 <div style="
   display:flex;
@@ -91,6 +96,34 @@ pre a { font-family: inherit; line-height: inherit; text-decoration: none; }
 </pre>
 
 </div>
+
+</main>
+
+<footer>
+
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;   /* this pushes the footer down */
+}
+</style>
+
+<pre style="background:#141428;color:white;line-height:1; text-align: center;">
+Powered by just plain text HTML and CSS
+</pre>
+</footer>
+
 </body>
+
+
 
 </html>
