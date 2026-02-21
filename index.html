@@ -4,6 +4,28 @@
 <meta charset="utf-8">
 <title>MARTER_ELECTRONICS</title>
 
+<script>
+document.addEventListener("mouseover", function(e) {
+  const link = e.target.closest("a[href]");
+  if (!link) return;
+
+  const url = new URL(link.href);
+
+  // only same-site pages
+  if (url.origin !== location.origin) return;
+
+  // skip pages marked heavy
+  if (link.dataset.heavy === "true") return;
+
+  if (document.querySelector(`link[href="${link.href}"]`)) return;
+
+  const l = document.createElement("link");
+  l.rel = "prefetch";
+  l.href = link.href;
+  document.head.appendChild(l);
+});
+</script>
+
 <style>
 html {
   -webkit-text-size-adjust: 100%;
@@ -23,7 +45,7 @@ body {
     "Menlo",
     "Consolas",
     monospace;
-  font-size: clamp(14px, 2.5vw, 18px);
+  font-size: clamp(14px, 2.5vw, 35px);
 }
 
 pre {
@@ -40,8 +62,9 @@ pre a {
 .tui-btn {
   background: #008080;
   color: white;
-  padding: 0;
+  padding: 0px;
   text-decoration: none;
+  margin-left: 10px;
 }
 
 .tui-btn:hover {
@@ -77,13 +100,15 @@ main {
 }
 
 .tui-window {
-  display:inline-block;
-  background:#000080;
+  display: flex;
+  flex-direction: column;
+  background:#000d6e;
   color:white;
   padding:10px;
   border:4px solid white;
   box-shadow:10px 10px black;
   font-family: monospace;
+  min-height: 20px
 }
 
 .tui-title {
@@ -95,6 +120,16 @@ main {
 
 .tui-body {
   min-width:200px;
+  text-align:center;
+}
+
+.tui-footer { 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  margin-top: auto; 
+  text-align:center;
 }
 
 </style>
@@ -106,9 +141,9 @@ main {
 <div class="topbar">
 <pre>======== MARTER_ELECTRONICS ========</pre>
 <div class="menu">
-  <a href="page2.html" class="tui-btn">[ Projects ]</a>
-  <a href="page2.html" class="tui-btn">[ About ]</a>
-  <a href="page2.html" class="tui-btn">[ Contact ]</a>
+  <a  href="page2.html" class="tui-btn">[ Projects ]</a>
+  <a  href="page2.html" class="tui-btn">[ About ]</a>
+  <a  href="page2.html" class="tui-btn">[ Contact ]</a>
 </div>
 <pre>PROJECTS</pre>
 </div>
@@ -119,20 +154,14 @@ main {
 <div class="windows">
 
   <div class="tui-window">
-    <div class="tui-title">Window1</div>
+    <div class="tui-title">Window3</div>
     <div class="tui-body">
-      FOXES!!!<br><br>
-      <a href="page2.html" class="tui-btn">[ Yes ]</a>
-      <a href="page2.html" class="tui-btn">[ No ]</a>
+      DRAGONS!!!<br><br>
     </div>
-  </div>
 
-  <div class="tui-window">
-    <div class="tui-title">Window2</div>
-    <div class="tui-body">
-      WOLVES!!!<br><br>
-      <a href="page2.html" class="tui-btn">[ Yes ]</a>
-      <a href="page2.html" class="tui-btn">[ No ]</a>
+    <div class="tui-footer">
+      <a  href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a  href="page2.html" class="tui-btn">[ No ]</a>
     </div>
   </div>
 
@@ -140,18 +169,38 @@ main {
     <div class="tui-title">Window3</div>
     <div class="tui-body">
       DRAGONS!!!<br><br>
-      <a href="page2.html" class="tui-btn">[ Yes ]</a>
-      <a href="page2.html" class="tui-btn">[ No ]</a>
+    </div>
+
+    <div class="tui-footer">
+      <a  href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a  href="page2.html" class="tui-btn">[ No ]</a>
     </div>
   </div>
 
+  <div class="tui-window">
+    <div class="tui-title">Test</div>
+    <div class="tui-body">
+      <a href="assets/robots/robots.jpg" data-heavy="true">
+        <img src="assets/robots/robots_lq.jpg" width="500">
+      </a>
+    </div>
+
+    <div class="tui-footer">
+      <a  href="page2.html" class="tui-btn">[ Yes ]</a>
+      <a  href="page2.html" class="tui-btn">[ No ]</a>
+    </div>
+  </div>
+
+
 </div>
+
+
 
 </main>
 
 <footer>
 <pre style="background:#141428;color:white;text-align:center;">
-Powered by just HTML and CSS
+Footer
 </pre>
 </footer>
 
