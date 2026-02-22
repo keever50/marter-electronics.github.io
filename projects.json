@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Tiling LED Wall - WIP",
+    "category": "Artistic Installations",
+    "thumb": "assets/ledwall/ledwall_di.gif",
+    "media": "assets/ledwall/wall.mp4",
+    "page": "page2.html",
+    "wip": true
+  },
+  {
+    "title": "Reffurence Scanners - V2",
+    "category": "Interactive Entertainment",
+    "thumb": "assets/robots/robots_di.gif",
+    "media": "assets/robots/robots.jpg",
+    "page": "page2.html"
+  },
+  {
+    "title": "Reffurence PC games",
+    "category": "Interactive Entertainment",
+    "thumb": "assets/pcgames/pcgames_di.gif",
+    "media": "assets/pcgames/pcgames.jpg",
+    "page": "page2.html"
+  },
+  {
+    "title": "Reffurence Scanners - V1",
+    "category": "Interactive Entertainment",
+    "thumb": "assets/scannerv1/scannerv1_di.gif",
+    "media": "assets/scannerv1/scannerv1.jpg",
+    "page": "page2.html"
+  },
+  {
+    "title": "Synth - V1",
+    "category": "Costumes",
+    "thumb": "assets/synth/synth_di.gif",
+    "media": "assets/synth/synth.mp4",
+    "page": "page2.html"
+  },
+  {
+    "title": "OLED Badge",
+    "category": "Electronic Badges",
+    "thumb": "assets/badge/badge_di.gif",
+    "media": "assets/badge/badge_static.png",
+    "page": "page2.html"
+  }
+]
