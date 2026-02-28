@@ -12,7 +12,7 @@ if (!$projects) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marter • Fabrica</title>
+<title>MONOLITH █ FIELD</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -22,7 +22,7 @@ if (!$projects) {
 <header class="site-header">
   <div class="brand-block">
     <div class="brand-main">
-      MARTER.FABRICA<span class="cursor"></span>
+      MONOLITH █ FIELD<span class="cursor"></span>
     </div>
     <div class="brand-sub">-</div>
   </div>
