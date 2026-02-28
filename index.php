@@ -11,60 +11,61 @@ if (!$projects) {
 <html>
 <head>
 <meta charset="utf-8">
-<title>MARTER_ELECTRONICS</title>
+<title>Marter • Fabrica</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="topbar">
-<pre>======== MARTER_ELECTRONICS ========</pre>
-<div class="menu">
-  <a href="page2.html" class="tui-btn">[ Projects ]</a>
-  <a href="page2.html" class="tui-btn">[ About ]</a>
-  <a href="page2.html" class="tui-btn">[ Contact ]</a>
-</div>
-<pre>PROJECTS</pre>
-</div>
+<header class="site-header">
+  <div class="brand">Marter • Fabrica</div>
+  <nav class="nav">
+    <a href="page2.html">Projects</a>
+    <a href="page2.html">About</a>
+    <a href="page2.html">Contact</a>
+  </nav>
+</header>
 
-<main>
+<main class="container">
 
-<div class="windows">
+  <section class="projects-grid">
 
-<?php foreach ($projects as $p): 
-  $class = !empty($p["wip"]) ? "tui-window-wip" : "tui-window";
-?>
+  <?php foreach ($projects as $p): 
+    $class = !empty($p["wip"]) ? "project-card wip" : "project-card";
+  ?>
 
-  <div class="<?= $class ?>">
-    <div class="tui-title"><?= htmlspecialchars($p["title"]) ?></div>
+    <article class="<?= $class ?>">
 
-    <div class="tui-body">
-      <pre><?= htmlspecialchars($p["category"]) ?></pre>
-    </div>
+      <div class="project-image">
+        <a href="<?= htmlspecialchars($p["media"]) ?>" data-heavy="true">
+          <img src="<?= htmlspecialchars($p["thumb"]) ?>" loading="lazy">
+        </a>
+      </div>
 
-    <div class="tui-body">
-      <a href="<?= htmlspecialchars($p["media"]) ?>" data-heavy="true">
-        <img src="<?= htmlspecialchars($p["thumb"]) ?>" height="300" loading="lazy">
-      </a>
-    </div>
+      <div class="project-content">
+        <div class="project-meta">
+          <?= htmlspecialchars($p["category"]) ?>
+        </div>
 
-    <div class="tui-footer">
-      <a href="<?= htmlspecialchars($p["page"]) ?>" class="tui-btn">
-        [ Show more ]
-      </a>
-    </div>
-  </div>
+        <h2 class="project-title">
+          <?= htmlspecialchars($p["title"]) ?>
+        </h2>
 
-<?php endforeach; ?>
+        <a href="<?= htmlspecialchars($p["page"]) ?>" class="project-link">
+          View Project →
+        </a>
+      </div>
 
-</div>
+    </article>
+
+  <?php endforeach; ?>
+
+  </section>
 
 </main>
 
-<footer>
-<pre style="background:#281414;color:white;text-align:center;">
-Footer
-</pre>
+<footer class="site-footer">
+  © <?= date("Y") ?> Marter Fabrica
 </footer>
 
 <script src="script.js"></script>
