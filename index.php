@@ -11,18 +11,26 @@ if (!$projects) {
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marter • Fabrica</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <header class="site-header">
-  <div class="brand">Marter • Fabrica</div>
+  <div class="brand-block">
+    <div class="brand-main">
+      MARTER.FABRICA<span class="cursor"></span>
+    </div>
+    <div class="brand-sub">-</div>
+  </div>
+
   <nav class="nav">
-    <a href="page2.html">Projects</a>
-    <a href="page2.html">About</a>
-    <a href="page2.html">Contact</a>
+    <a href="#">PROJECTS</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
   </nav>
 </header>
 
@@ -30,11 +38,15 @@ if (!$projects) {
 
   <section class="projects-grid">
 
-  <?php foreach ($projects as $p): 
+  <?php foreach ($projects as $index => $p): 
     $class = !empty($p["wip"]) ? "project-card wip" : "project-card";
   ?>
 
     <article class="<?= $class ?>">
+
+      <div class="project-index">
+        <?= str_pad($index + 1, 2, "0", STR_PAD_LEFT) ?>
+      </div>
 
       <div class="project-image">
         <a href="<?= htmlspecialchars($p["media"]) ?>" data-heavy="true">
@@ -43,7 +55,9 @@ if (!$projects) {
       </div>
 
       <div class="project-content">
+
         <div class="project-meta">
+          <span class="meta-label">TYPE</span>
           <?= htmlspecialchars($p["category"]) ?>
         </div>
 
@@ -51,9 +65,16 @@ if (!$projects) {
           <?= htmlspecialchars($p["title"]) ?>
         </h2>
 
-        <a href="<?= htmlspecialchars($p["page"]) ?>" class="project-link">
-          View Project →
-        </a>
+        <div class="project-footer">
+          <span class="sys-id">
+            HASH: <?= substr(md5($p["title"]), 0, 6) ?>
+          </span>
+
+          <a href="<?= htmlspecialchars($p["page"]) ?>" class="project-link">
+            OPEN →
+          </a>
+        </div>
+
       </div>
 
     </article>
@@ -65,9 +86,8 @@ if (!$projects) {
 </main>
 
 <footer class="site-footer">
-  © <?= date("Y") ?> Marter Fabrica
+  <div>© <?= date("Y") ?> MARTER.FABRICA</div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
